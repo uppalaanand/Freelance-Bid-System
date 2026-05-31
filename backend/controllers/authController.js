@@ -90,6 +90,8 @@ const logout = async (req, res, next) => {
     res.cookie('token', 'none', {
       expires: new Date(0),
       httpOnly: true,
+      sameSite: process.env.NODE_ENV === 'production' ? 'none' : 'lax',
+      secure: process.env.NODE_ENV === 'production',
     });
 
     res.status(200).json({
