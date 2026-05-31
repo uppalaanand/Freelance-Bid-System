@@ -8,11 +8,13 @@ export default defineConfig({
     port: 5173,
     proxy: {
       '/api': {
-        target: 'http://localhost:5000',
+        // target: 'http://localhost:5000',
+        target: 'https://freelance-bid-system.onrender.com',
         changeOrigin: true,
       },
       '/socket.io': {
-        target: 'http://localhost:5000',
+        // target: 'http://localhost:5000',
+        target: 'https://freelance-bid-system.onrender.com',
         ws: true,
       },
     },
