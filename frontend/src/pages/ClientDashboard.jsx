@@ -89,25 +89,7 @@ const ClientDashboard = () => {
       value: totalProjects,
       icon: HiCollection,
       color: 'text-indigo-600 bg-indigo-50 border-indigo-100',
-    },
-    {
-      title: 'Active Gigs',
-      value: activeGigs,
-      icon: HiBriefcase,
-      color: 'text-sky-600 bg-sky-50 border-sky-100',
-    },
-    {
-      title: 'Total Spent',
-      value: formatCurrency(totalSpent),
-      icon: HiCurrencyDollar,
-      color: 'text-emerald-600 bg-emerald-50 border-emerald-100',
-    },
-    {
-      title: 'Your Rating',
-      value: rating > 0 ? `${rating.toFixed(1)} / 5.0` : 'N/A',
-      icon: HiStar,
-      color: 'text-amber-500 bg-amber-50 border-amber-100',
-    },
+    }
   ];
 
   return (
@@ -232,61 +214,6 @@ const ClientDashboard = () => {
                 onClick: () => navigate('/dashboard/create-project'),
                 icon: HiPlus,
               }}
-            />
-          )}
-        </div>
-
-        {/* Recent Bids Received */}
-        <div className="space-y-4">
-          <div className="flex justify-between items-center">
-            <h2 className="text-xl font-bold text-slate-850">Recent Bids Received</h2>
-          </div>
-
-          {isBidsLoading ? (
-            <div className="flex items-center justify-center p-8 bg-white border border-slate-200 rounded-xl">
-              <Spinner size="md" />
-            </div>
-          ) : recentBids && recentBids.length > 0 ? (
-            <div className="space-y-3">
-              {recentBids.slice(0, 5).map((bid) => (
-                <Card key={bid._id} className="p-4 border border-slate-150 hover:border-slate-350 transition-colors">
-                  <div className="space-y-2">
-                    <div className="flex items-start justify-between gap-2">
-                      <div className="flex items-center gap-2">
-                        <Avatar src={bid.student?.user?.avatar} name={bid.student?.user?.fullName} size="sm" />
-                        <div>
-                          <p className="text-xs font-bold text-slate-700">{bid.student?.user?.fullName || 'Student'}</p>
-                          <p className="text-[10px] text-slate-400">{bid.student?.user?.email}</p>
-                        </div>
-                      </div>
-                      <Badge variant="success">
-                        {formatCurrency(bid.amount)}
-                      </Badge>
-                    </div>
-                    <div className="pt-1 border-t border-slate-50">
-                      <p className="text-xs text-slate-500 font-medium line-clamp-1">
-                        For: <Link to={`/projects/${bid.projectId}`} className="text-indigo-605 font-bold hover:underline">{bid.projectTitle}</Link>
-                      </p>
-                      <p className="text-[10px] text-slate-400 mt-1">
-                        {new Date(bid.createdAt).toLocaleDateString()} at {new Date(bid.createdAt).toLocaleTimeString()}
-                      </p>
-                    </div>
-                    <div className="flex justify-end pt-1">
-                      <Link to={`/projects/${bid.projectId}`}>
-                        <Button variant="ghost" size="sm" className="h-7 text-xs" icon={HiClipboardCheck}>
-                          Review Bid
-                        </Button>
-                      </Link>
-                    </div>
-                  </div>
-                </Card>
-              ))}
-            </div>
-          ) : (
-            <EmptyState
-              icon={HiClipboardCheck}
-              title="No bids received"
-              description="Bids from interested student freelancers will appear here once you post an open project."
             />
           )}
         </div>

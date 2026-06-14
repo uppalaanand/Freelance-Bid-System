@@ -103,72 +103,6 @@ const Landing = () => {
         </div>
       </section>
 
-      {/* Stats Section */}
-      <section className="py-12 bg-white border-b border-slate-100 relative z-10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-            <div className="p-4">
-              <h3 className="text-3xl font-extrabold text-slate-800">500+</h3>
-              <p className="text-sm text-slate-500 mt-1">Completed Projects</p>
-            </div>
-            <div className="p-4">
-              <h3 className="text-3xl font-extrabold text-slate-800">1,200+</h3>
-              <p className="text-sm text-slate-500 mt-1">Talented Students</p>
-            </div>
-            <div className="p-4">
-              <h3 className="text-3xl font-extrabold text-slate-800">300+</h3>
-              <p className="text-sm text-slate-500 mt-1">Local Clients</p>
-            </div>
-            <div className="p-4">
-              <h3 className="text-3xl font-extrabold text-slate-800">₹5M+</h3>
-              <p className="text-sm text-slate-500 mt-1">Student Earnings</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Features Section */}
-      <section className="py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-2xl mx-auto mb-16">
-            <h2 className="text-3xl font-extrabold text-slate-900">Why Choose StudentBid?</h2>
-            <p className="text-slate-500 mt-3">All the tools students and clients need to succeed in localized freelance collaboration.</p>
-          </div>
-
-          <motion.div
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
-          >
-            {[
-              { icon: HiFolder, t: 'Browse Local Projects', d: 'Filter by category, budget, and technologies to find perfect fits near your campus.' },
-              { icon: HiDocumentText, t: 'Milestone Proposals', d: 'Submit step-by-step cost breakdown proposals to protect your milestones.' },
-              { icon: HiBriefcase, t: 'Build Real Portfolio', d: 'Work on actual projects that you can display on your resume and GitHub.' },
-              { icon: HiShieldCheck, t: 'Secure Escrow Payments', d: 'Integrated payments ensure students get paid as milestones are approved.' },
-              { icon: HiChatAlt2, t: 'Real-time Chat & Sockets', d: 'Direct messaging and notifications keep you in constant contact with your clients.' },
-              { icon: HiChartBar, t: 'Transparency & Reviews', d: 'Leave feedback ratings after completion to establish local credibility.' },
-            ].map((f, i) => {
-              const Icon = f.icon;
-              return (
-                <motion.div
-                  key={i}
-                  variants={itemVariants}
-                  className="bg-white p-6 rounded-xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow flex flex-col gap-4"
-                >
-                  <div className="p-3 bg-indigo-50 text-indigo-600 rounded-lg w-fit">
-                    <Icon className="h-6 w-6" />
-                  </div>
-                  <h3 className="text-lg font-bold text-slate-800">{f.t}</h3>
-                  <p className="text-sm text-slate-500 leading-relaxed">{f.d}</p>
-                </motion.div>
-              );
-            })}
-          </motion.div>
-        </div>
-      </section>
-
       {/* How It Works Section */}
       <section id="how-it-works" className="py-20 bg-white border-t border-b border-slate-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -299,28 +233,6 @@ const Landing = () => {
                 View All Projects
               </Button>
             </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="py-20 bg-indigo-900 text-white relative">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-          <h2 className="text-3xl sm:text-4xl font-extrabold mb-4">Ready to Start Your Freelance Journey?</h2>
-          <p className="text-indigo-200 text-base max-w-xl mx-auto mb-8">
-            Join the localized marketplace matching college skills with active business proposals.
-          </p>
-          <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <Link to="/register">
-              <Button variant="secondary" size="lg" className="w-full sm:w-auto">
-                Sign Up Now
-              </Button>
-            </Link>
-            <a href="/#how-it-works">
-              <Button variant="ghost" size="lg" className="w-full sm:w-auto text-white hover:bg-indigo-800">
-                Learn More
-              </Button>
-            </a>
           </div>
         </div>
       </section>

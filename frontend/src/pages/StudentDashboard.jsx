@@ -48,29 +48,11 @@ const StudentDashboard = () => {
 
   const stats = [
     {
-      title: 'Total Earnings',
-      value: formatCurrency(totalEarnings),
-      icon: HiCurrencyDollar,
-      color: 'text-emerald-600 bg-emerald-50 border-emerald-100',
-    },
-    {
-      title: 'Active Projects',
-      value: activeProjectsCount,
-      icon: HiBriefcase,
-      color: 'text-indigo-600 bg-indigo-50 border-indigo-100',
-    },
-    {
       title: 'Submitted Bids',
       value: submittedBidsCount,
       icon: HiClipboardList,
       color: 'text-sky-600 bg-sky-50 border-sky-100',
-    },
-    {
-      title: 'Average Rating',
-      value: rating > 0 ? `${rating.toFixed(1)} / 5.0` : 'N/A',
-      icon: HiStar,
-      color: 'text-amber-500 bg-amber-50 border-amber-100',
-    },
+    }
   ];
 
   return (
@@ -178,53 +160,6 @@ const StudentDashboard = () => {
                 onClick: () => window.location.href = '/projects',
                 icon: HiArrowRight,
               }}
-            />
-          )}
-        </div>
-
-        {/* Recent Bids List */}
-        <div className="space-y-4">
-          <div className="flex justify-between items-center">
-            <h2 className="text-xl font-bold text-slate-855">Recent Bids</h2>
-            <Link to="/dashboard/my-bids" className="text-sm font-semibold text-indigo-600 hover:text-indigo-800">
-              View All
-            </Link>
-          </div>
-
-          {myBids && myBids.length > 0 ? (
-            <div className="space-y-3">
-              {myBids.slice(0, 5).map((bid) => {
-                let badgeVariant = 'default';
-                if (bid.status === 'accepted') badgeVariant = 'success';
-                if (bid.status === 'rejected') badgeVariant = 'danger';
-                if (bid.status === 'pending') badgeVariant = 'warning';
-
-                return (
-                  <Card key={bid._id} className="p-4 border border-slate-150">
-                    <div className="flex items-start justify-between gap-3">
-                      <div className="space-y-1">
-                        <h4 className="text-sm font-bold text-slate-800 line-clamp-1 hover:text-indigo-650">
-                          <Link to={`/projects/${bid.project?._id || bid.project}`}>{bid.project?.title || 'Project Details'}</Link>
-                        </h4>
-                        <div className="flex items-center gap-2">
-                          <span className="text-xs text-slate-500 font-medium">Bid: {formatCurrency(bid.amount)}</span>
-                          <span className="text-xs text-slate-300">•</span>
-                          <span className="text-xs text-slate-500 font-medium">{new Date(bid.createdAt).toLocaleDateString()}</span>
-                        </div>
-                      </div>
-                      <Badge variant={badgeVariant}>
-                        {bid.status}
-                      </Badge>
-                    </div>
-                  </Card>
-                );
-              })}
-            </div>
-          ) : (
-            <EmptyState
-              icon={HiClipboardList}
-              title="No bids submitted"
-              description="You haven't submitted any bids yet. Start bidding to get project offers."
             />
           )}
         </div>

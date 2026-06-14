@@ -178,40 +178,6 @@ const Payments = () => {
       {/* STATS OVERVIEW */}
       {!isClient && (
         <div className="space-y-8">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <Card className="flex items-center gap-4 border-l-4 border-emerald-500">
-              <div className="p-3 bg-emerald-50 text-emerald-600 rounded-xl">
-                <HiTrendingUp className="h-8 w-8" />
-              </div>
-              <div>
-                <p className="text-xs font-semibold text-slate-400 uppercase tracking-wider">Total Earnings</p>
-                <h3 className="text-2xl font-bold text-slate-800 mt-1">{formatCurrency(totalEarned)}</h3>
-              </div>
-            </Card>
-
-            <Card className="flex items-center gap-4 border-l-4 border-amber-500">
-              <div className="p-3 bg-amber-50 text-amber-600 rounded-xl">
-                <HiClock className="h-8 w-8" />
-              </div>
-              <div>
-                <p className="text-xs font-semibold text-slate-400 uppercase tracking-wider">Pending Release</p>
-                <h3 className="text-2xl font-bold text-slate-800 mt-1">{formatCurrency(pendingRelease)}</h3>
-              </div>
-            </Card>
-
-            <Card className="flex items-center gap-4 border-l-4 border-indigo-500">
-              <div className="p-3 bg-indigo-50 text-indigo-600 rounded-xl">
-                <HiCurrencyDollar className="h-8 w-8" />
-              </div>
-              <div>
-                <p className="text-xs font-semibold text-slate-400 uppercase tracking-wider">Released Payments</p>
-                <h3 className="text-2xl font-bold text-slate-800 mt-1">
-                  {formatCurrency(payments.filter((p) => p.status === 'released').reduce((acc, p) => acc + p.amount, 0))}
-                </h3>
-              </div>
-            </Card>
-          </div>
-
           <div className="grid grid-cols-1 gap-6">
             <PaymentDetailsForm userId={user?._id} />
           </div>

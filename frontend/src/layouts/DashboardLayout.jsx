@@ -76,7 +76,7 @@ const DashboardLayout = () => {
         { path: '/dashboard/my-projects', label: 'My Projects', icon: HiFolder },
         { path: '/dashboard/create-project', label: 'Create Project', icon: HiPlusCircle },
         { path: '/dashboard/chat', label: 'Chat', icon: HiChatAlt2 },
-        { path: '/dashboard/payments', label: 'Payments', icon: HiCreditCard },
+        // { path: '/dashboard/payments', label: 'Payments', icon: HiCreditCard },
         { path: '/dashboard/notifications', label: 'Notifications', icon: HiBell, badge: unreadCount },
         { path: '/dashboard/settings', label: 'Settings', icon: HiCog },
       ];

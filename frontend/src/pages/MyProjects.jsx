@@ -59,7 +59,7 @@ const MyProjects = () => {
           {[
             { id: 'open', label: 'Open', icon: HiClock, color: 'text-emerald-500' },
             { id: 'assigned', label: 'Assigned', icon: HiUserGroup, color: 'text-blue-500' },
-            { id: 'completed', label: 'Completed', icon: HiCheckCircle, color: 'text-indigo-500' }
+            // { id: 'completed', label: 'Completed', icon: HiCheckCircle, color: 'text-indigo-500' }
           ].map((tab) => {
             const count = getStatusCount(tab.id);
             const isActive = activeTab === tab.id;
