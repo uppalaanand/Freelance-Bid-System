@@ -78,7 +78,6 @@ const Register = () => {
           label="Full Name"
           type="text"
           placeholder="John Doe"
-          icon={HiUser}
           error={errors.fullName?.message}
           {...register('fullName', { required: 'Name is required' })}
         />
@@ -87,7 +86,6 @@ const Register = () => {
           label="Email Address"
           type="email"
           placeholder="name@university.edu"
-          icon={HiMail}
           error={errors.email?.message}
           {...register('email', {
             required: 'Email is required',
@@ -102,7 +100,6 @@ const Register = () => {
           label="Phone Number"
           type="tel"
           placeholder="9876543210"
-          icon={HiPhone}
           error={errors.phone?.message}
           {...register('phone', {
             pattern: {
@@ -116,7 +113,6 @@ const Register = () => {
           label="Password"
           type="password"
           placeholder="••••••••"
-          icon={HiLockClosed}
           error={errors.password?.message}
           {...register('password', {
             required: 'Password is required',

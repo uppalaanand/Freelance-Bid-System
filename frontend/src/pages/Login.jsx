@@ -47,7 +47,6 @@ const Login = () => {
           label="Email Address"
           type="email"
           placeholder="name@university.edu"
-          icon={HiMail}
           error={errors.email?.message}
           {...register('email', {
             required: 'Email is required',
@@ -62,7 +61,6 @@ const Login = () => {
           label="Password"
           type="password"
           placeholder="••••••••"
-          icon={HiLockClosed}
           error={errors.password?.message}
           {...register('password', {
             required: 'Password is required',
@@ -75,11 +73,11 @@ const Login = () => {
 
         <div className="flex items-center justify-between">
           <label className="flex items-center gap-2 cursor-pointer">
-            <input
+            {/* <input
               type="checkbox"
               className="rounded border-slate-350 text-indigo-600 focus:ring-indigo-500 h-4 w-4"
-            />
-            <span className="text-xs text-slate-500 font-medium">Remember me</span>
+            /> */}
+            {/* <span className="text-xs text-slate-500 font-medium">Remember me</span> */}
           </label>
           <a href="#" className="text-xs font-semibold text-indigo-600 hover:text-indigo-850">
             Forgot Password?
