@@ -95,7 +95,7 @@ const ClientDashboard = () => {
   return (
     <div className="space-y-8 max-w-7xl mx-auto px-4 py-8">
       {/* Header section */}
-      <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 bg-slate-900 text-white rounded-2xl p-6 md:p-8 shadow-md">
+      <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 rounded-2xl p-6 md:p-8 shadow-md">
         <div className="flex items-center gap-4">
           <Avatar src={profile?.user?.avatar} name={user?.fullName} size="xl" className="border-2 border-white/20" />
           <div>
